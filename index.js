@@ -37,7 +37,14 @@ app.get('/api/health', (req, res) => {
     timestamp: new Date()
   });
 });
-
+app.get('/api/cicd-test', (req, res) => {
+  res.json({
+    success: true,
+    message: 'CI/CD is working! Auto deployed from GitHub 🚀',
+    deployedAt: new Date(),
+    version: '2.0'
+  });
+});
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({
